@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { getCurrentBook } from '../actions/Actions';
 
 import Prices from '../components/prices';
+import Recommendation from '../components/recommendation';
 
 class CurrentBookContainer extends Component {
   async componentDidMount() {
@@ -18,7 +19,32 @@ class CurrentBookContainer extends Component {
     clearInterval(this.interval);
   }
 
+  getBuySellRecommendation() {
+    // 0 - Buy/Sell from any
+    // 1 - Buy/Sell from Binance
+    // 2 - Buy/Sell from Coinbase
+    let buyBtc = 0;
+    if (this.props.btcBin.buy < this.props.btcCnb.buy) buyBtc = 1;
+    else if (this.props.btcBin.buy > this.props.btcCnb.buy) buyBtc = 2;
+
+    let sellBtc = 0;
+    if (this.props.btcBin.sell > this.props.btcCnb.sell) buyBtc = 1;
+    else if (this.props.btcBin.sell < this.props.btcCnb.sell) buyBtc = 2;
+
+    let buyEth = 0;
+    if (this.props.ethBin.buy < this.props.ethCnb.buy) buyBtc = 1;
+    else if (this.props.ethBin.buy > this.props.ethCnb.buy) buyBtc = 2;
+
+    let sellEth = 0;
+    if (this.props.ethBin.sell > this.props.ethCnb.sell) buyBtc = 1;
+    else if (this.props.ethBin.sell < this.props.ethCnb.sell) buyBtc = 2;
+
+    return { 'buyBtc': buyBtc, 'sellBtc': sellBtc, 'buyEth': buyEth, 'sellEth': sellEth }
+  }
+
   render() {
+    const recommend = this.getBuySellRecommendation();
+
     return (
       <div className="book">
         <div className="coinName"><h2>Bitcoin</h2></div>
@@ -43,6 +69,7 @@ class CurrentBookContainer extends Component {
           <div>Buy at</div>
           <div>Sell at</div>
         </div>
+        <Recommendation recommend={ recommend } />
       </div>
     );
   }

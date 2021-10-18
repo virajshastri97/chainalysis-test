@@ -38,6 +38,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.recommend {
+  padding-top: 10px;
+}
+
 @media only screen and (min-width: 900px) {
   .App {
     padding: 50px 300px;
