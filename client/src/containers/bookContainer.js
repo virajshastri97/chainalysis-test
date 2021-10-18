@@ -12,7 +12,7 @@ class CurrentBookContainer extends Component {
     await this.props.getCurrentBook();
     this.interval = setInterval(async () => {
       await this.props.getCurrentBook();
-    }, 60000);
+    }, 600000);
   }
 
   componentWillUnmount() {
@@ -66,8 +66,8 @@ class CurrentBookContainer extends Component {
           <Prices prices={ this.props.ethCnb } />
         </div>
         <div className="legend">
-          <div>Buy at</div>
-          <div>Sell at</div>
+          <div>Buy for</div>
+          <div>Sell for</div>
         </div>
         <Recommendation recommend={ recommend } />
       </div>

@@ -8,9 +8,9 @@ const Recommendation = (props) => (
   <div className="recommend">
     <h2>Our Recommendation</h2>
     Buy Bitcoin from {getExchangeName(props.recommend.buyBtc)}<br/>
-    Sell Bitcoin from {getExchangeName(props.recommend.sellBtc)}<br/><br/>
+    Sell Bitcoin at {getExchangeName(props.recommend.sellBtc)}<br/><br/>
     Buy Ethereum from {getExchangeName(props.recommend.buyEth)}<br/>
-    Sell Ethereum from {getExchangeName(props.recommend.sellEth)}
+    Sell Ethereum at {getExchangeName(props.recommend.sellEth)}
   </div>
 );
 
