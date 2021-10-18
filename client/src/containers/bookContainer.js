@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -20,18 +20,30 @@ class CurrentBookContainer extends Component {
 
   render() {
     return (
-      <Fragment>
-        <div className="exName" id="top">Binance</div>
-        <div className="exName" id="bottom">Coinbase</div>
-        <div className="coinName" id="left">
+      <div className="book">
+        <div className="coinName"><h2>Bitcoin</h2></div>
+        <div className="price">
+          <div className="exName">Binance</div>
           <Prices prices={ this.props.btcBin } />
+        </div>
+        <div className="price">
+          <div className="exName">Coinbase</div>
           <Prices prices={ this.props.btcCnb } />
         </div>
-        <div className="coinName" id="right">
+        <div className="coinName"><h2>Ethereum</h2></div>
+        <div className="price">
+          <div className="exName">Binance</div>
           <Prices prices={ this.props.ethBin } />
+        </div>
+        <div className="price">
+          <div className="exName">Coinbase</div>
           <Prices prices={ this.props.ethCnb } />
         </div>
-      </Fragment>
+        <div className="legend">
+          <div>Buy at</div>
+          <div>Sell at</div>
+        </div>
+      </div>
     );
   }
 };
