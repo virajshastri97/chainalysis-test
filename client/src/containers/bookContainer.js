@@ -12,7 +12,7 @@ class CurrentBookContainer extends Component {
     await this.props.getCurrentBook();
     this.interval = setInterval(async () => {
       await this.props.getCurrentBook();
-    }, 600000);
+    }, 1800000);
   }
 
   componentWillUnmount() {

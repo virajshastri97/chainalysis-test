@@ -37,7 +37,7 @@ const getCurrentBook = async () => {
 };
 
 getCurrentBook();
-setInterval(getCurrentBook, 600000);
+setInterval(getCurrentBook, 1800000);
 
 const app = express();
 
