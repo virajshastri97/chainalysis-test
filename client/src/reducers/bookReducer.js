@@ -1,7 +1,10 @@
-import { GET_CURRENT_BOOK } from '../action/types';
+import { GET_CURRENT_BOOK } from '../actions/types';
 
 const initialState = {
-  book: null
+  ethBin: { "buy": 0, "sell": 0},
+  ethCnb: { "buy": 0, "sell": 0},
+  btcBin: { "buy": 0, "sell": 0},
+  btcCnb: { "buy": 0, "sell": 0}
 };
 
 export default function (state=initialState, action) {
@@ -9,7 +12,10 @@ export default function (state=initialState, action) {
     case GET_CURRENT_BOOK:
       return {
         ...state,
-        book: action.payload.book
+        ethBin: action.payload.ethBin,
+        ethCnb: action.payload.ethCnb,
+        btcBin: action.payload.btcBin,
+        btcCnb: action.payload.btcCnb
       };
     default:
       return state;
