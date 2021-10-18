@@ -1,38 +1,45 @@
 .App {
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  padding-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.coinName {
+  padding: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.price {
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 33% auto;
+  grid-template-areas: "e p";
 }
 
-.App-link {
-  color: #61dafb;
+.exName {
+  grid-area: e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.rates {
+  grid-area: p;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.legend {
+  padding-top: 15px;
+  padding-left: 34%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (min-width: 900px) {
+  .App {
+    padding: 50px 300px;
   }
 }
