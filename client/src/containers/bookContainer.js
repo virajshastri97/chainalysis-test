@@ -28,16 +28,16 @@ class CurrentBookContainer extends Component {
     else if (this.props.btcBin.buy > this.props.btcCnb.buy) buyBtc = 2;
 
     let sellBtc = 0;
-    if (this.props.btcBin.sell > this.props.btcCnb.sell) buyBtc = 1;
-    else if (this.props.btcBin.sell < this.props.btcCnb.sell) buyBtc = 2;
+    if (this.props.btcBin.sell > this.props.btcCnb.sell) sellBtc  = 1;
+    else if (this.props.btcBin.sell < this.props.btcCnb.sell) sellBtc = 2;
 
     let buyEth = 0;
-    if (this.props.ethBin.buy < this.props.ethCnb.buy) buyBtc = 1;
-    else if (this.props.ethBin.buy > this.props.ethCnb.buy) buyBtc = 2;
+    if (this.props.ethBin.buy < this.props.ethCnb.buy) buyEth = 1;
+    else if (this.props.ethBin.buy > this.props.ethCnb.buy) buyEth = 2;
 
     let sellEth = 0;
-    if (this.props.ethBin.sell > this.props.ethCnb.sell) buyBtc = 1;
-    else if (this.props.ethBin.sell < this.props.ethCnb.sell) buyBtc = 2;
+    if (this.props.ethBin.sell > this.props.ethCnb.sell) sellEth = 1;
+    else if (this.props.ethBin.sell < this.props.ethCnb.sell) sellEth = 2;
 
     return { 'buyBtc': buyBtc, 'sellBtc': sellBtc, 'buyEth': buyEth, 'sellEth': sellEth }
   }
