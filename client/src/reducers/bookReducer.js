@@ -7,7 +7,7 @@ const initialState = {
   btcCnb: { "buy": 0, "sell": 0}
 };
 
-export default function (state=initialState, action) {
+const bookReducer = (state=initialState, action) => {
   switch (action.type) {
     case GET_CURRENT_BOOK:
       return {
@@ -20,4 +20,6 @@ export default function (state=initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default bookReducer;
