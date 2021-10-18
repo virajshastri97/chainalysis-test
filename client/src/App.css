@@ -1,6 +1,10 @@
 .App {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
   text-align: center;
-  padding: 10px;
 }
 
 .header {
@@ -44,6 +48,17 @@
 
 @media only screen and (min-width: 900px) {
   .App {
-    padding: 50px 300px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr;
+  }
+  
+  .header, .book {
+    grid-column: 2;
+  }
+
+  .header {
+    grid-row: 1;
+    padding-top: 100px;
   }
 }
